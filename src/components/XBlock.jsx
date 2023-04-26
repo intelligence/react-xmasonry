@@ -52,7 +52,7 @@ export default class XBlock extends React.Component {
         const { width, height, measured, parent, style, ...rest } = this.props,
               maxColumns = this.props.parent.columns,
               columns = Math.min(width || 1, maxColumns, this.props.parent.props.maxColumns);
-        style.width = Math.floor(columns * this.props.parent.containerWidth / maxColumns);
+        style.width = Math.round(columns * this.props.parent.containerWidth / maxColumns);
         return <div data-width={ columns }
                     { ...rest }
                     style={ { ...style, ...XBlock.defaultStyle } }
